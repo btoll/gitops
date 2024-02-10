@@ -1,0 +1,22 @@
+namespace: default
+
+commonAnnotations:
+  onCallPager: 1-800-328-7448
+  app.kubernetes.io/managed-by: "Kilgore Trout"
+
+commonLabels:
+  app: benjamintoll
+  distributed: required
+
+resources:
+  - deployment.yaml
+  - service.yaml
+
+patches:
+- target:
+    group: apps
+    version: v1
+    kind: Deployment
+    name: benjamintoll
+  path: patch.yaml
+

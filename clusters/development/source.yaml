@@ -1,0 +1,11 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: applications
+  namespace: default
+spec:
+  interval: 1m0s
+  ref:
+    branch: master
+  url: https://github.com/owls-nest-farm/gitops

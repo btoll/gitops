@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: benjamintoll
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - name: benjamintoll
+        image: btoll/benjamintoll.com:latest
+        envFrom:
+        - configMapRef:
+            name: env-benjamintoll
+        resources:
+          limits:
+            cpu: 500m
+            memory: 100Mi
+          requests:
+            cpu: 300m
+            memory: 50Mi
+        ports:
+          - name: http
+            containerPort: 80
+          - name: https
+            containerPort: 443
+

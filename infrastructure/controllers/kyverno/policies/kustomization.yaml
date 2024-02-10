@@ -1,0 +1,8 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: default
+resources:
+  - add-ttl-jobs.yaml
+  - spread-pods-across-topology.yaml
+  - require-pod-requests-limits.yaml
+

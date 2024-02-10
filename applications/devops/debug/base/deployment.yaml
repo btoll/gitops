@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: debug
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - name: debug
+        image: btoll/debug:latest # {"$imagepolicy": "flux-system:debug"}
+        stdin: true
+        tty: true
+        envFrom:
+        - configMapRef:
+            name: env-debug
+        resources:
+          limits:
+            cpu: 500m
+            memory: 100Mi
+          requests:
+            cpu: 300m
+            memory: 50Mi
+

@@ -1,0 +1,11 @@
+resources:
+  - ../../base
+
+patches:
+  - path: patch.yaml
+
+configMapGenerator:
+- name: env-benjamintoll
+  envs:
+  - env
+
