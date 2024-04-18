@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db-g00gle
+spec:
+  replicas: 1
+  template:
+    spec:
+      hostname: db
+      subdomain: g00gle
+      containers:
+      - name: db
+        image: btoll/debug:latest
+        stdin: true
+        tty: true
+        resources:
+          limits:
+            cpu: 500m
+            memory: 100Mi
+          requests:
+            cpu: 300m
+            memory: 50Mi
+

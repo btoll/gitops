@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: g00gle
+  labels:
+    name: svc-g00gle
+spec:
+  selector:
+    app: g00gle
+  clusterIP: None
+#  ports:
+#  - name: foo
+#    port: 1234
+#  - name: bar
+#    port: 5678
+

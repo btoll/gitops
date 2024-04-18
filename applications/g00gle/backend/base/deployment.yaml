@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-g00gle
+spec:
+  replicas: 1
+  template:
+    spec:
+      hostname: backend
+      subdomain: g00gle
+      initContainers:
+      - name: init-backend
+        image: busybox:1.36.1
+        command: ["sh", "-c", "until nslookup db.g00gle.default.svc.cluster.local; do echo waiting; sleep 2; done"]
+      containers:
+      - name: backend
+        image: btoll/debug:latest
+        stdin: true
+        tty: true
+        resources:
+          limits:
+            cpu: 500m
+            memory: 100Mi
+          requests:
+            cpu: 300m
+            memory: 50Mi
+

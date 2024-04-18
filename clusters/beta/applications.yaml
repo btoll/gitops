@@ -5,9 +5,10 @@ metadata:
   name: applications
   namespace: flux-system
 spec:
+  #suspend: true
   dependsOn:
     - name: infrastructure-controllers
-  interval: 1m0s
+  interval: 30s
   retryInterval: 1m0s
   targetNamespace: default
   sourceRef:
