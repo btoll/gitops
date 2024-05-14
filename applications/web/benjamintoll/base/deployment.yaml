@@ -12,6 +12,8 @@ spec:
         envFrom:
         - configMapRef:
             name: env-benjamintoll
+#        - secretRef:
+#            name: sealed-secret
         resources:
           limits:
             cpu: 500m

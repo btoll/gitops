@@ -11,6 +11,19 @@ commonLabels:
 resources:
   - deployment.yaml
   - service.yaml
+    #  - sealed-secret.yaml
+
+#configurations:
+#  - sealed-secret-config.yaml
+
+#secretGenerator:
+#  - name: sample-secret
+#    type: Opaque
+#    files:
+#      - sealed-secret.yaml
+#    options:
+#      annotations:
+#        config.kubernetes.io/local-config: "true"
 
 patches:
 - target:
