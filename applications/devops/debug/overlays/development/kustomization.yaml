@@ -4,6 +4,10 @@ kind: Kustomization
 resources:
   - ../../base
 
+replicas:
+  - name: debug
+    count: 7
+
 configMapGenerator:
 - name: env-debug
   envs:
