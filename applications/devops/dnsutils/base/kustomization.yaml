@@ -6,5 +6,5 @@ commonLabels:
   app: dnsutils
 
 resources:
-  - pod.yaml
+  - deployment.yaml
 

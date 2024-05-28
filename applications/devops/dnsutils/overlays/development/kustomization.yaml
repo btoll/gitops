@@ -4,6 +4,10 @@ kind: Kustomization
 resources:
   - ../../base
 
+replicas:
+  - name: dnsutils
+    count: 3
+
 images:
 - name: registry.k8s.io/e2e-test-images/jessie-dnsutils
   newName: registry.k8s.io/e2e-test-images/jessie-dnsutils

@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dnsutils
+spec:
+  replicas: 2
+  template:
+    spec:
+      containers:
+      - name: dnsutils
+        image: registry.k8s.io/e2e-test-images/jessie-dnsutils:1.3
+        stdin: true
+        tty: true
+        imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+
